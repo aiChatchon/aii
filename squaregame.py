@@ -4,18 +4,16 @@ y1=random.randint(1,10)
 x2=random.randint(11,20)
 y2=random.randint(11,20)
 print(x1,y1,x2,y2)
-class recGame:
+class RectangleGame:
     def __init__(self,x1,y1,x2,y2):
         self.x1=x1
         self.y1=y1
         self.x2=x2
         self.y2=y2
-    def calArea(self):
-        self.x_width=x2-x1
-        self.y_width=y2-y1
-        self.area=self.x_width*self.y_width
+    def calArea(self):#ใส่ใน init ก็ได้ #
+        self.area=(self.x2-self.x1)*(self.y2-self.y1)
         print(self.area)
-    def checkResult(self,user_x,user_y,user_area):#
+    def checkResult(self,user_x,user_y,user_area):
         self.user_x=user_x
         self.user_y=user_y
         self.user_area=user_area
@@ -28,7 +26,7 @@ class recGame:
             print("You won")
         else:
             print("You lost")
-recgame=recGame(x1,y1,x2,y2)
+recgame=RectangleGame(x1,y1,x2,y2)
 recgame.calArea()
 recgame.checkResult(int(input("Enter X pos:  ")),int(input("Enter Y pos:  ")),int(input("Enter the area of the rectangle:  ")))
 recgame.showResult()
